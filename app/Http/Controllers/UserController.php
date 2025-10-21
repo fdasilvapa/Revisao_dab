@@ -25,6 +25,8 @@ class UserController extends Controller
 
     public function create(UserRequest $request)
     {
+        $request->merge(['tipo_usuario_id' => 3]);
+        
         $user = $this->service->create($request);
 
         return ['status' => true, 'message' => Geral::USUARIO_CADASTRADO, "usuario" => $user];
