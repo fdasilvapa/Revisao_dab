@@ -19,6 +19,8 @@ class ApartamentoService
     public function create($request)
     {
         $data = $request->all();
+        
+        $data['proprietario'] = auth()->id();
 
         $apartamento = $this->apartamentoRule->validaApartamentoPorBloco($data['bloco'], $data['numero']);
 

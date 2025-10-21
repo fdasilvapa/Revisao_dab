@@ -31,7 +31,7 @@ class CondominioRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'condominio' => 'sometimes|string',
+            'condominio' => 'required|string',
             'endereco' => 'required|string'
         ];
     }
